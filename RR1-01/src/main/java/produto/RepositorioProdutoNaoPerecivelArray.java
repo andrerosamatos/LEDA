@@ -99,8 +99,17 @@ public class RepositorioProdutoNaoPerecivelArray {
 	 * @param codigo
 	 */
 	public void remover(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int indice = procurarIndice(codigo);
+		if (indice != -1) {
+			produtos[indice] = null;
+			int i = indice;
+			while (i <= index) {
+				produtos[i] = (produtos[i+1]); {
+					i++;
+				}
+			}
+		} else { throw new RuntimeException("Produto nao cadastrado"); }
+
 	}
 
 	/**
