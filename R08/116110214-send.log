@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2017-12-06T16:04:24.771-0300</date>
+  <logger>ANDRE ROSA MATOS</logger>
+  <level>FINE</level>
+  <message>File 116110214-ANDRE ROSA MATOS.zip was received. It was sent by ANDRE ROSA MATOS from IP 150.165.42.149</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2017-12-06T17:26:12.344-0300</date>
+  <logger>ANDRE ROSA MATOS</logger>
+  <level>FINE</level>
+  <message>File 116110214-ANDRE ROSA MATOS.zip was received. It was sent by ANDRE ROSA MATOS from IP 150.165.42.149</message>
+</record>
