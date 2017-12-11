@@ -39,21 +39,21 @@ public class StudentTestHashtableOpenAddressLinearProbing {
 		assertEquals(7, table1.indexOf(new HashtableElement(7)));
 		assertEquals(0, table1.getCOLLISIONS());
 
-//		table1.insert(new HashtableElement(9)); // nao produz colisao. coloca no
-//												// slot indexado com 9
-//		assertEquals(9, table1.indexOf(new HashtableElement(9)));
-//		assertEquals(0, table1.getCOLLISIONS());
-//
-//		table1.insert(new HashtableElement(12)); // produz colisao com o 2.
-//													// coloca no slot indexado
-//													// com 6 (prox disponivel)
-//		assertEquals(6, table1.indexOf(new HashtableElement(12)));
-//		assertEquals(4, table1.getCOLLISIONS());
-//
-//		table2.insert(new HashtableElement(14)); // nao produz colisao. coloca
-//													// no slot indexado com 4
-//		assertEquals(4, table2.indexOf(new HashtableElement(14)));
-//		assertEquals(0, table2.getCOLLISIONS());
+		table1.insert(new HashtableElement(9)); // nao produz colisao. coloca no
+												// slot indexado com 9
+		assertEquals(9, table1.indexOf(new HashtableElement(9)));
+		assertEquals(0, table1.getCOLLISIONS());
+
+		table1.insert(new HashtableElement(12)); // produz colisao com o 2.
+													// coloca no slot indexado
+													// com 6 (prox disponivel)
+		assertEquals(6, table1.indexOf(new HashtableElement(12)));
+		assertEquals(4, table1.getCOLLISIONS());
+
+		table2.insert(new HashtableElement(14)); // nao produz colisao. coloca
+													// no slot indexado com 4
+		assertEquals(4, table2.indexOf(new HashtableElement(14)));
+		assertEquals(0, table2.getCOLLISIONS());
 
 	}
 

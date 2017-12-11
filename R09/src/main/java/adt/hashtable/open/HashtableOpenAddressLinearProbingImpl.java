@@ -37,10 +37,10 @@ public class HashtableOpenAddressLinearProbingImpl<T extends Storable> extends A
 		int probe = 0;
 		boolean removeu = false;
 		if (element != null) {
-			while (probe < size() && removeu == false) {
+			while (probe <= size() && removeu == false) {
 
 				int index = ((HashFunctionLinearProbing<T>) this.hashFunction).hash(element, probe);
-				if (this.table[index] != null || !this.table[index].equals(deletedElement)) {
+				if (this.table[index] != null && this.table[index].equals(element) ) {
 					this.table[index] = deletedElement;
 					removeu = true;
 					elements--;
@@ -53,13 +53,13 @@ public class HashtableOpenAddressLinearProbingImpl<T extends Storable> extends A
 
 	@Override
 	public T search(T element) {
-		boolean achou = true;
+		boolean achou = false;
 		int probe = 0;
 		T elemento = null;
-		while (probe < size() && achou == false) {
+		while (probe <= size() && achou == false) {
 
 			int index = ((HashFunctionLinearProbing<T>) this.hashFunction).hash(element, probe);
-			if (this.table[index].equals(element)) {
+			if (this.table[index] != null && this.table[index].equals(element)) {
 				achou = true;
 				elemento = element;
 			} else {
@@ -71,9 +71,9 @@ public class HashtableOpenAddressLinearProbingImpl<T extends Storable> extends A
 
 	@Override
 	public int indexOf(T element) {
-		boolean achou = true;
+		boolean achou = false;
 		int probe = 0;
-		int indice = 0;
+		int indice = -1;
 		while (probe <= size() && achou == false) {
 
 			int index = ((HashFunctionLinearProbing<T>) this.hashFunction).hash(element, probe);
