@@ -70,7 +70,8 @@ public class HeapImpl<T extends Comparable<T>> implements Heap<T> {
 	public T[] toArray() {
 		ArrayList<T> resp = new ArrayList<T>();
 		for (T elem : this.heap) {
-			resp.add(elem);
+			if (elem != null)
+				resp.add(elem);
 		}
 		return (T[]) resp.toArray(new Comparable[0]);
 	}
@@ -97,10 +98,12 @@ public class HeapImpl<T extends Comparable<T>> implements Heap<T> {
 		if (r < this.size() && this.comparator.compare(this.heap[r], this.heap[largest]) > 0) {
 			largest = r;
 		}
-		if (largest != i) {
-			this.heap[i] = this.heap[largest];
-			this.heap[largest] = this.heap[i];
-			heapify(heap, largest);
+		if (i != largest) {
+			Util.swap(this.heap, i, largest);
+			heapify(largest);
+		} else if (i != 0) {
+			heapify(parent(i));
+
 		}
 	}
 
@@ -126,22 +129,23 @@ public class HeapImpl<T extends Comparable<T>> implements Heap<T> {
 	@Override
 	public void buildHeap(T[] array) {
 		index = array.length - 1;
-		for (int i = array.length / 2; i == 0; i--) {
-			heapify(array, i);
+		this.heap = array;
+		for (int i = parent(index); i >= 0; i--) {
+			heapify(i);
 		}
 	}
 
 	@Override
 	public T extractRootElement() {
-		if (this.size() < 0) {
-			throw new Error("head underflow");
+		T max = null;
+		if (this.size() > 0) {
+			max = rootElement();
+			this.heap[0] = this.heap[index];
+			this.heap[index] = null;
+			index--;
+			heapify(parent(index + 1));
 		}
-		T max = this.heap[0];
-		this.heap[0] = this.heap[this.size()];
-		index--;
-		heapify(heap, 0);
 		return max;
-
 	}
 
 	@Override
@@ -154,9 +158,11 @@ public class HeapImpl<T extends Comparable<T>> implements Heap<T> {
 		Heap<T> minHeap = new HeapImpl<T>((o1, o2) -> o2.compareTo(o1));
 		minHeap.buildHeap(array);
 		T[] meuArray = (T[]) new Comparable[array.length];
+
 		int i = 0;
 		while (minHeap.size() > 0) {
-			meuArray[i] = extractRootElement();
+			// System.out.println(meuArray.length + "" + minHeap.size());
+			meuArray[i] = minHeap.extractRootElement();
 			i++;
 		}
 		return meuArray;
