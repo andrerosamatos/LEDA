@@ -79,7 +79,7 @@ public class StudentBSTTest {
 	@Test
 	public void testSucessorPredecessor() {
 
-		fillTree(); // -40 -34 0 2 5 6 9 12 23 67 76 232
+		fillTree();  // -40 -34 0 2 5 6 9 12 23 67 76 232
 
 		assertEquals(null, tree.predecessor(-40));
 		assertEquals(new Integer(-34), tree.sucessor(-40).getData());

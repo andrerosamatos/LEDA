@@ -1,9 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE log SYSTEM "logger.dtd">
-<log>
-<record>
-  <date>2018-01-31T16:15:01.148-0300</date>
-  <logger>ANDRE ROSA MATOS</logger>
-  <level>FINE</level>
-  <message>File 116110214-ANDRE ROSA MATOS.zip was received. It was sent by ANDRE ROSA MATOS from IP 150.165.42.149</message>
-</record>
+Envio do roteiro R10-01 possivel apenas entre 31/01/2018 16:00:00 e 02/02/2018 16:00:00. A hora atual do servidor eh: 06/03/2018 06:34:22
